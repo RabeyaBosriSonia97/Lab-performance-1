@@ -1,0 +1,148 @@
+##1.
+public class Person {
+	
+	public String name;
+	public  int age;
+	
+	
+	
+	public Person() {
+		super();
+	}
+
+	public Person(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + "]";
+	}
+	
+	
+	
+	
+	
+	
+
+
+	//public static void main(String[] args) {
+		
+		
+
+
+}
+
+public class Student  extends Person{
+	public int id;
+	public double cgpa;
+
+	public Student() {
+		super();
+	}
+
+
+	public Student(String name, int age, int id, double cgpa) {
+		super(name,age);
+		this.id = id;
+		this.cgpa = cgpa;
+	}
+	public void showinfo() {
+		System.out.println(name);
+		System.out.println(age);
+		System.out.println(id);
+		System.out.println(cgpa);
+	}
+
+
+	
+
+	//public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+//}
+
+public class PersonTest {
+
+	public static void main(String[] args) {
+		
+		//Person p1 = new Person();
+		//p1.setName("Sonia");
+		//p1.setAge(20);
+		//System.out.println(p1);
+		
+		
+		Student s1 = new Student("Sonia",21,35509,3.24);
+		s1.showinfo();
+		
+	}
+
+}
+###2.
+class Address{
+	String city;
+	String country;
+	
+	public Address(String city, String country) {
+		this.city = city;
+		this.country = country;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [city=" + city + ", country=" + country + "]";
+	}
+	
+	
+}
+
+class Student{
+	int id;
+	String name;
+	Address address;// Student has a address// aggregation
+	
+	public Student(int id, String name, Address address) {
+		this.id = id;
+		this.name = name;
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", address=" + address + "]";
+	}
+	
+}
+
+public class StudentTest {
+
+	public static void main(String[] args) {
+		
+		Address address = new Address("Dhaka","BD");
+		
+		Student s1 = new Student(1,"Sonia",address);
+		System.out.println(s1);
+	}
+
+}
